@@ -10,3 +10,9 @@ title: ContrarySheep
 </div>
 
 <p>Ain't no sheep like a contrary sheep.</p>
+
+<ul class="posts">
+  {% for post in site.posts limit:8 %}
+    {% include post_excerpt.html %}
+  {% endfor %}
+</ul>
