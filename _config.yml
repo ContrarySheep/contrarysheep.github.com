@@ -12,3 +12,7 @@ mini_magick:
     source: media/photos
     destination: media/processed/photos/medium
     resize: "600x400"
+
+tag_cloud:
+  min_size: 75
+  max_size: 250
