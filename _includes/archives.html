@@ -1,0 +1,10 @@
+<h2>Archives</h2>
+<ul class="posts">
+  {% assign counter = 1 %}{% for post in site.posts %}{% unless post.next %}
+  {% include archive_year.html %}
+  {% else %}{% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}{% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}{% if year != nyear %}
+  {% include archive_year.html %}
+  {% endif %}{% endunless %}{% capture post_month %}{{ post.date | date: '%b' }}{% endcapture %}{% capture next_post_month %}{{ post.previous.date | date: '%b' }}{% endcapture %}{% if post_month != next_post_month %}
+  {% include archive_month.html %}
+  {% assign counter = 1 %}{% else %}{% capture temp %}{{ counter | plus: 1 }}{% endcapture %}{% assign counter = temp %}{% endif %}{% endfor %}
+</ul>
