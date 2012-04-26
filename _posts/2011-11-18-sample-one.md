@@ -4,6 +4,7 @@ title: "Sample One"
 category: Ramblings
 tags:
   - Sheeple
+excerpt: '![Sheeple](/media/photos/sheep-herd.jpg)'
 ---
 
 ![Sheeple](/media/photos/sheep-herd.jpg)
