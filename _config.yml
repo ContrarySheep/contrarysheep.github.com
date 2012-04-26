@@ -1,3 +1,13 @@
 markdown: rdiscount
 pygments: true
 permalink: /:year/:month/:day/:title
+
+mini_magick:
+  small:
+    source: media/photos
+    destination: media/processed/photos/small
+    resize: "275x600"
+  medium:
+    source: media/photos
+    destination: media/processed/photos/medium
+    resize: "600x400"

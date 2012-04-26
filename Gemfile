@@ -5,4 +5,5 @@ group :development do
   gem 'jekyll'
   gem 'sass'
   gem 'bourbon'
+  gem 'mini_magick'
 end

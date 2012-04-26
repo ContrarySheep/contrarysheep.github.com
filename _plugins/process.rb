@@ -10,6 +10,7 @@ module Jekyll
       site.generate_archives
       site.generate_categories
       site.generate_tags
+      site.process_media
     end
   end
 end
