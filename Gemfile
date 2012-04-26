@@ -6,4 +6,5 @@ group :development do
   gem 'sass'
   gem 'bourbon'
   gem 'mini_magick'
+  gem 'rdiscount'
 end
