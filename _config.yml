@@ -1,3 +1,5 @@
+safe: true
+lsi: false
 markdown: rdiscount
 pygments: true
 permalink: /:year/:month/:day/:title
