@@ -9,6 +9,7 @@ module Jekyll
     def generate(site)
       site.generate_archives
       site.generate_categories
+      site.generate_tags
     end
   end
 end

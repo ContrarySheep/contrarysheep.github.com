@@ -1,0 +1,11 @@
+---
+layout: default
+---
+
+<h1>All Tags</h1>
+
+<ul>
+  {% for tag in site.tags %}
+    <li>{{ tag[0] }}</li>
+  {% endfor %}
+</ul>
