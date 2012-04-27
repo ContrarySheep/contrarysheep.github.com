@@ -2,7 +2,18 @@
 layout: default
 ---
 <div id="post">
-{{ content | replace: '/media/photos/', '/media/processed/photos/medium/' }}
+  <div class="date">{{ page.date | date:"%B %-d, %Y" }}</div>
+  <div class="category">Posted in {{ page.category }}</div>
+  <div class="content">
+    {{ content | replace: '/media/photos/', '/media/processed/photos/medium/' }}
+  </div>
+  <ul class="tags">
+    {% for tag in page.tags %}
+      <li>
+        <a href="/tags/{{ tag | downcase | replace:' ','-' }}">{{ tag }}</a>
+      </li>
+    {% endfor %}
+  </ul>
 </div>
 
 {% include related_posts.html %}

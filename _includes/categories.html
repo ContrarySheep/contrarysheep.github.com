@@ -1,6 +1,9 @@
 <h2>Categories</h2>
 <ul class="posts">
   {% for category in site.categories %}
-    <li><a href="/categories/{{ category[0] | downcase | replace:' ','-' }}">{{ category[0] }}</a> ({{ category[1] | size }})</li>
+    <li>
+      <a href="/categories/{{ category[0] | downcase | replace:' ','-' }}">{{ category[0] }}</a> 
+      ({{ category[1] | size }})
+    </li>
   {% endfor %}
 </ul>

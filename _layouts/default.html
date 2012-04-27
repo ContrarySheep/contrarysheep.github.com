@@ -15,6 +15,14 @@
 	  </a>
 	</div>
 	
+	<div id="header">
+	  <div class="logo"><a href="/"><img src="/images/blaaag-small.png"></a></div>
+	  <div class="tagline">The blog of Contrary Sheep</div>
+	  {% include title.html %}
+	</div>
+	
+	{% include sidebar.html %}
+	
 	<div id="container" class={{ page.layout_class }}>
     
     {{ content }}
@@ -25,13 +33,7 @@
     
     {% include tag_cloud.html %}
     
-    <ul id="footer">
-			<li>
-				<a href="http://twitter.com/ContrarySheep">
-					<img src="/images/twitter-icon.png">
-				</a>
-			</li>
-		</ul>
+    {% include footer.html %}
     
 	</div>
 	
