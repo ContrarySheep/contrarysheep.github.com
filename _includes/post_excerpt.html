@@ -2,7 +2,11 @@
   <li>
     <div class="title"><a href="{{ post.url }}">{{ post.title }}</a></div>
     <div class="date">{{ post.date | date:"%B %-d, %Y" }}</div>
-    <div class="category">Posted in {{ post.category }}</div>
+    <div class="category">
+      {% if post.category %}
+        Posted in {{ post.category }}
+      {% endif %}
+    </div>
     <div class="content excerpt">
       {{ post.excerpt | replace: '/media/photos/', '/media/processed/photos/small/' | markdownify }}
     </div>
@@ -18,7 +22,11 @@
   <li>
     <div class="title"><a href="{{ post.url }}">{{ post.title }}</a></div>
     <div class="date">{{ post.date | date:"%B %-d, %Y" }}</div>
-    <div class="category">Posted in {{ post.category }}</div>
+    <div class="category">
+      {% if post.category %}
+        Posted in {{ post.category }}
+      {% endif %}
+    </div>
     <div class="content raw">
       {{ post.content | strip_html | truncatewords:40 | markdownify }}
     </div>

@@ -3,7 +3,11 @@ layout: default
 ---
 <div id="post">
   <div class="date">{{ page.date | date:"%B %-d, %Y" }}</div>
-  <div class="category">Posted in {{ page.category }}</div>
+  <div class="category">
+    {% if post.category %}
+      Posted in {{ post.category }}
+    {% endif %}
+  </div>
   <div class="content">
     {{ content | replace: '/media/photos/', '/media/processed/photos/medium/' }}
   </div>
