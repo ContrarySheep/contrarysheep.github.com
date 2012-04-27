@@ -1,14 +1,14 @@
 ---
 layout: default
 title: 'All Tags'
+hide_tags: true
 ---
 
-<ul>
-  {% for tag in site.tags %}
-    <li>
-       <a href="/tags/{{ tag[0] | downcase | replace:' ','-' }}">
-         {{ tag[0] }}
-      </a>
-    </li>
-  {% endfor %}
-</ul>
+{% for tag in site.tags %}
+  <div class="brick">
+     <a href="/tags/{{ tag[0] | downcase | replace:' ','-' }}">
+       {{ tag[0] }}
+     </a>
+    {% for tagged_post in tag[1]  %}{% assign post_count = forloop.length %}{% endfor %}({{ post_count }})
+  </div>
+{% endfor %}

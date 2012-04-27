@@ -2,8 +2,6 @@
 layout: default
 ---
 
-<ul>
-  {% for post in site.tags[page.tag] %}
-    {% include post_excerpt.html %}
-  {% endfor %}
-</ul>
+{% for post in site.tags[page.tag] %}
+  {% include post_excerpt.html %}
+{% endfor %}

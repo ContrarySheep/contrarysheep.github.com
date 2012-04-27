@@ -1,3 +1,4 @@
+<div id="archives" class="brick">
 <h2>Archives</h2>
 <ul class="posts">
   {% assign counter = 1 %}{% for post in site.posts %}{% unless post.next %}
@@ -8,3 +9,4 @@
   {% include archive_month.html %}
   {% assign counter = 1 %}{% else %}{% capture temp %}{{ counter | plus: 1 }}{% endcapture %}{% assign counter = temp %}{% endif %}{% endfor %}
 </ul>
+</div>

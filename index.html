@@ -2,8 +2,6 @@
 layout: default
 ---
 
-<ul class="posts">
-  {% for post in site.posts limit:8 %}
-    {% include post_excerpt.html %}
-  {% endfor %}
-</ul>
+{% for post in site.posts limit:8 %}
+  {% include post_excerpt.html %}
+{% endfor %}

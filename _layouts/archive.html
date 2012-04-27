@@ -2,8 +2,6 @@
 layout: default
 ---
 
-<ul>
-  {% for post in page.posts %}
-    {% include post_excerpt.html %}
-  {% endfor %}
-</ul>
+{% for post in page.posts %}
+  {% include post_excerpt.html %}
+{% endfor %}

@@ -1,10 +1,12 @@
 ---
 layout: default
 title: 'All Categories'
+hide_categories: true
 ---
 
-<ul>
-  {% for category in site.categories %}
-    <li>{{ category[0] }}</li>
-  {% endfor %}
-</ul>
+{% for category in site.categories %}
+  <div class="brick">
+    <a href="/categories/{{ category[0] | downcase | replace:' ','-' }}">{{ category[0] }}</a> 
+    ({{ category[1] | size }})
+  </div>
+{% endfor %}

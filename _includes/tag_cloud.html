@@ -1,15 +1,13 @@
 {% include tag_cloud_logic.html %}
 
 <div id="tag_cloud" class="brick">
-  <div class="contents">
-    <h3>Tag Cloud</h3>
-    <div class="cloud">
-      {% for tag in site.tags %}
-        {% assign title = tag[0] %}{% assign slug = tag[0] %}{% assign posts_for_tag = tag[1] %}{% for tagged_post in posts_for_tag  %}{% assign post_count = forloop.length %}{% endfor %}
-          <a href="/tags/{{ slug | downcase | replace:' ','-' }}">
-            <span style="font-size: {{ post_count | minus:min_count | times:post_size_difference | divided_by:post_count_difference | plus:min_size }}%;">{{ title }}</span>
-          </a>
-      {% endfor %} 
-    </div>
+  <h3>Tag Cloud</h3>
+  <div class="cloud">
+    {% for tag in site.tags %}
+      {% assign title = tag[0] %}{% assign slug = tag[0] %}{% assign posts_for_tag = tag[1] %}{% for tagged_post in posts_for_tag  %}{% assign post_count = forloop.length %}{% endfor %}
+        <a href="/tags/{{ slug | downcase | replace:' ','-' }}">
+          <span style="font-size: {{ post_count | minus:min_count | times:post_size_difference | divided_by:post_count_difference | plus:min_size }}%;">{{ title }}</span>
+        </a>
+    {% endfor %} 
   </div>
 </div>
