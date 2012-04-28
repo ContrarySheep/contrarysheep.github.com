@@ -9,21 +9,10 @@
    <script src="/js/jquery.isotope.min.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/activate_isotope.js"></script>
-<!--
-<script type="text/javascript">
-	var $container = $('#container');
 
-   $container.imagesLoaded( function(){
-     $container.isotope({
-       masonry: {
-        columnWidth: 314
-       }
-     });
-   });
-</script>
--->
 </head>
-<body onload="activateIsotope()">
+<body>
+  
   <div id="forkme">
 	  <a href="http://github.com/ContrarySheep">
 	    <img src="https://a248.e.akamai.net/camo.github.com/e6bef7a091f5f3138b8cd40bc3e114258dd68ddf/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub">
@@ -34,42 +23,40 @@
 	  <div id="header" class="brick">
   	  <div class="logo"><a href="/"><img src="/images/blaaag-small.png"></a></div>
   	  <div class="tagline">The blog of Contrary Sheep</div>
+  	  <ul class="links">
+    		<li>
+    		  <a href="/about">
+    				<img src="/images/sheep-badge-small.png" title="About" alt="About">
+    			</a>
+    		</li>
+    		<li>
+    		  <a href="http://twitter.com/ContrarySheep">
+    				<img src="/images/twitter-badge-small.png" title="Twitter" alt="Twitter">
+    			</a>
+    		</li>
+    		<li>
+    		  <a href="https://github.com/ContrarySheep">
+    		    <img src="/images/octocat-badge-small.png" title="Github" alt="Github">
+    		  </a>
+    		</li>
+    	</ul>
   	  
 <h1>Archive of posts from December 20, 2011</h1>
 
   	</div>
-
-  	<div id="sidebar" class="brick">
-  <ul id="links">
-		<li>
-		  <a href="/about">
-				<img src="/images/sheep-badge-small.png" title="About" alt="About">
-			</a>
-		</li>
-		<li>
-		  <a href="http://twitter.com/ContrarySheep">
-				<img src="/images/twitter-badge-small.png" title="Twitter" alt="Twitter">
-			</a>
-		</li>
-		<li>
-		  <a href="https://github.com/ContrarySheep">
-		    <img src="/images/octocat-badge-small.png" title="Github" alt="Github">
-		  </a>
-		</li>
-	</ul>
-</div>
     
     
   
   <div class="brick post-excerpt">
     
-    <div class="title"><a href="/2011/12/20/sample-two">Sample Two</a></div>
-    <div class="date">December 20, 2011</div>
+      <h4 class="title"><a href="/2011/12/20/sample-two">Sample Two</a></h4>
+    
     <div class="category">
       
         Posted in Code
       
     </div>
+    <div class="date">December 20, 2011</div>
     <div class="content raw">
       <p>Vestibulum commodo vestibulum massa, sed sollicitudin metus accumsan pulvinar. Ut erat velit, sagittis non vestibulum et, sollicitudin quis dolor. Suspendisse sagittis scelerisque turpis, in iaculis dolor gravida nec. Donec ultricies, nibh eu dictum porta, diam odio ullamcorper lacus, eu convallis...</p>
 
@@ -155,7 +142,7 @@
     
 
 <div id="tag_cloud" class="brick">
-  <h3>Tag Cloud</h3>
+  <h2>Tag Cloud</h2>
   <div class="cloud">
     
       
@@ -206,6 +193,11 @@
 </div>
     
 	</div>
+	
+	<script type="text/javascript">
+	  activateIsotope();
+	</script>
+	
 </body>
 </html>
 

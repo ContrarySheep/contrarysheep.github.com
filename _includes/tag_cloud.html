@@ -1,7 +1,7 @@
 {% include tag_cloud_logic.html %}
 
 <div id="tag_cloud" class="brick">
-  <h3>Tag Cloud</h3>
+  <h2>Tag Cloud</h2>
   <div class="cloud">
     {% for tag in site.tags %}
       {% assign title = tag[0] %}{% assign slug = tag[0] %}{% assign posts_for_tag = tag[1] %}{% for tagged_post in posts_for_tag  %}{% assign post_count = forloop.length %}{% endfor %}

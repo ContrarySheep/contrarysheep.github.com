@@ -9,21 +9,10 @@
    <script src="/js/jquery.isotope.min.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/activate_isotope.js"></script>
-<!--
-<script type="text/javascript">
-	var $container = $('#container');
 
-   $container.imagesLoaded( function(){
-     $container.isotope({
-       masonry: {
-        columnWidth: 314
-       }
-     });
-   });
-</script>
--->
 </head>
-<body onload="activateIsotope()">
+<body>
+  
   <div id="forkme">
 	  <a href="http://github.com/ContrarySheep">
 	    <img src="https://a248.e.akamai.net/camo.github.com/e6bef7a091f5f3138b8cd40bc3e114258dd68ddf/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub">
@@ -34,30 +23,27 @@
 	  <div id="header" class="brick">
   	  <div class="logo"><a href="/"><img src="/images/blaaag-small.png"></a></div>
   	  <div class="tagline">The blog of Contrary Sheep</div>
+  	  <ul class="links">
+    		<li>
+    		  <a href="/about">
+    				<img src="/images/sheep-badge-small.png" title="About" alt="About">
+    			</a>
+    		</li>
+    		<li>
+    		  <a href="http://twitter.com/ContrarySheep">
+    				<img src="/images/twitter-badge-small.png" title="Twitter" alt="Twitter">
+    			</a>
+    		</li>
+    		<li>
+    		  <a href="https://github.com/ContrarySheep">
+    		    <img src="/images/octocat-badge-small.png" title="Github" alt="Github">
+    		  </a>
+    		</li>
+    	</ul>
   	  
 <h1>All Categories</h1>
 
   	</div>
-
-  	<div id="sidebar" class="brick">
-  <ul id="links">
-		<li>
-		  <a href="/about">
-				<img src="/images/sheep-badge-small.png" title="About" alt="About">
-			</a>
-		</li>
-		<li>
-		  <a href="http://twitter.com/ContrarySheep">
-				<img src="/images/twitter-badge-small.png" title="Twitter" alt="Twitter">
-			</a>
-		</li>
-		<li>
-		  <a href="https://github.com/ContrarySheep">
-		    <img src="/images/octocat-badge-small.png" title="Github" alt="Github">
-		  </a>
-		</li>
-	</ul>
-</div>
     
     
   <div class="brick">
@@ -118,7 +104,7 @@
     
 
 <div id="tag_cloud" class="brick">
-  <h3>Tag Cloud</h3>
+  <h2>Tag Cloud</h2>
   <div class="cloud">
     
       
@@ -169,6 +155,11 @@
 </div>
     
 	</div>
+	
+	<script type="text/javascript">
+	  activateIsotope();
+	</script>
+	
 </body>
 </html>
 

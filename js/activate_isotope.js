@@ -1,4 +1,9 @@
+
 function activateIsotope(){
+  
+  if ($(window).width() < 570) {
+    $('.brick').width(263);
+  }
   
   $.Isotope.prototype._getCenteredMasonryColumns = function() {
     this.width = this.element.width();
@@ -61,10 +66,11 @@ function activateIsotope(){
   var $container = $('#container');
 
    $container.imagesLoaded( function(){
+     $('#container').show();
      $container.isotope({
        masonry: {
         itemSelector: '.brick',
-        columnWidth: 365,
+        columnWidth: 315,
        }
      });
    });
