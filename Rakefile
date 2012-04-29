@@ -3,7 +3,8 @@ require "bundler/setup"
 
 desc "Performs the default rake task."
 task :default do
-  puts "This is the default rake task"
+  system "rake css"
+  system "rake process"
 end
 
 desc "Renders the SASS styles as compressed CSS."
