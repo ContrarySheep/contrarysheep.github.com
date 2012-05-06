@@ -37,7 +37,7 @@ task :new do
 	ARGV[1..ARGV.length - 1].each { |v| title += " #{v}" }
 	title.strip!
 	now = Time.now
-	path = "_posts/#{now.strftime('%Y-%-m-%-d')}-#{title.downcase.gsub(/[\s\.]/, '-').gsub(/[^\w\d\-]/, '')}.md"
+	path = "_drafts/#{now.strftime('%Y-%-m-%-d')}-#{title.downcase.gsub(/[\s\.]/, '-').gsub(/[^\w\d\-]/, '')}.md"
 
 	File.open(path, "w") do |f|
 		f.puts "---"
