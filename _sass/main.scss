@@ -1,6 +1,14 @@
 @import 'normalize';
 @import 'bourbon/bourbon';
 @import 'solarized_dark';
+@import 'solarized_syntax';
+
+$tag-button-color: #CACACA;
+$category-button-color: #6C6C6C;
+$archive-button-color: #999;
+
+$gradient_from: #595959;
+$gradient_to: #404040;
 
 html{
   margin: 0;
@@ -14,13 +22,16 @@ body{
   font-weight: 300;
   font-size: 16px;
   letter-spacing: .03em;
+  a, a:link, a:visited{
+    color: #666;
+  }
   h1,h2,h3,h4,h5,h6,ul,li{
     margin:0;
     padding:0;
     text-align: left;
   }
   h1,h2,h3,h4,h5,h6{
-    color: #333;
+    color: #000;
     text-shadow: 1px 1px 1px #999;
   }
   h1{
@@ -34,91 +45,35 @@ body{
   }
   pre{
     code{
+      @include border-radius(5px);
       padding: 1em;
+      border: 1px solid #000;
     }
   }
   .gist{
     margin-top: 20px;
+    a, a:link, a:visited{
+      color: #666 !important;
+    }
     .gist-file{
+      @include border-radius(10px);
+      border: 1px solid #000;
       .gist-data{
+        @include border-top-radius(10px);
         .gist-highlight{
           padding: 1em;
-          background: #002b36 !important;
+          background: #000 !important;
           color: #839496 !important;
         }
+      }
+      .gist-meta{
+        @include border-bottom-radius(10px);
+        padding: 1em;
       }
     }
   }
   .gist-syntax{
-    .hll { background-color: #ffffcc }
-    .c { color: #586E75 } /* Comment */
-    .err { color: #93A1A1 } /* Error */
-    .g { color: #93A1A1 } /* Generic */
-    .k { color: #859900 } /* Keyword */
-    .l { color: #93A1A1 } /* Literal */
-    .n { color: #93A1A1 } /* Name */
-    .o { color: #859900 } /* Operator */
-    .x { color: #CB4B16 } /* Other */
-    .p { color: #93A1A1 } /* Punctuation */
-    .cm { color: #586E75 } /* Comment.Multiline */
-    .cp { color: #859900 } /* Comment.Preproc */
-    .c1 { color: #586E75 } /* Comment.Single */
-    .cs { color: #859900 } /* Comment.Special */
-    .gd { color: #2AA198 } /* Generic.Deleted */
-    .ge { color: #93A1A1; font-style: italic } /* Generic.Emph */
-    .gr { color: #DC322F } /* Generic.Error */
-    .gh { color: #CB4B16 } /* Generic.Heading */
-    .gi { color: #859900 } /* Generic.Inserted */
-    .go { color: #93A1A1 } /* Generic.Output */
-    .gp { color: #93A1A1 } /* Generic.Prompt */
-    .gs { color: #93A1A1; font-weight: bold } /* Generic.Strong */
-    .gu { color: #CB4B16 } /* Generic.Subheading */
-    .gt { color: #93A1A1 } /* Generic.Traceback */
-    .kc { color: #CB4B16 } /* Keyword.Constant */
-    .kd { color: #268BD2 } /* Keyword.Declaration */
-    .kn { color: #859900 } /* Keyword.Namespace */
-    .kp { color: #859900 } /* Keyword.Pseudo */
-    .kr { color: #268BD2 } /* Keyword.Reserved */
-    .kt { color: #DC322F } /* Keyword.Type */
-    .ld { color: #93A1A1 } /* Literal.Date */
-    .m { color: #2AA198 } /* Literal.Number */
-    .s { color: #2AA198 } /* Literal.String */
-    .na { color: #93A1A1 } /* Name.Attribute */
-    .nb { color: #B58900 } /* Name.Builtin */
-    .nc { color: #268BD2 } /* Name.Class */
-    .no { color: #CB4B16 } /* Name.Constant */
-    .nd { color: #268BD2 } /* Name.Decorator */
-    .ni { color: #CB4B16 } /* Name.Entity */
-    .ne { color: #CB4B16 } /* Name.Exception */
-    .nf { color: #268BD2 } /* Name.Function */
-    .nl { color: #93A1A1 } /* Name.Label */
-    .nn { color: #93A1A1 } /* Name.Namespace */
-    .nx { color: #93A1A1 } /* Name.Other */
-    .py { color: #93A1A1 } /* Name.Property */
-    .nt { color: #268BD2 } /* Name.Tag */
-    .nv { color: #268BD2 } /* Name.Variable */
-    .ow { color: #859900 } /* Operator.Word */
-    .w { color: #93A1A1 } /* Text.Whitespace */
-    .mf { color: #2AA198 } /* Literal.Number.Float */
-    .mh { color: #2AA198 } /* Literal.Number.Hex */
-    .mi { color: #2AA198 } /* Literal.Number.Integer */
-    .mo { color: #2AA198 } /* Literal.Number.Oct */
-    .sb { color: #586E75 } /* Literal.String.Backtick */
-    .sc { color: #2AA198 } /* Literal.String.Char */
-    .sd { color: #93A1A1 } /* Literal.String.Doc */
-    .s2 { color: #2AA198 } /* Literal.String.Double */
-    .se { color: #CB4B16 } /* Literal.String.Escape */
-    .sh { color: #93A1A1 } /* Literal.String.Heredoc */
-    .si { color: #2AA198 } /* Literal.String.Interpol */
-    .sx { color: #2AA198 } /* Literal.String.Other */
-    .sr { color: #DC322F } /* Literal.String.Regex */
-    .s1 { color: #2AA198 } /* Literal.String.Single */
-    .ss { color: #2AA198 } /* Literal.String.Symbol */
-    .bp { color: #268BD2 } /* Name.Builtin.Pseudo */
-    .vc { color: #268BD2 } /* Name.Variable.Class */
-    .vg { color: #268BD2 } /* Name.Variable.Global */
-    .vi { color: #268BD2 } /* Name.Variable.Instance */
-    .il { color: #2AA198 } /* Literal.Number.Integer.Long */
+    @include solarized-syntax;
   }
 }
 
@@ -143,21 +98,22 @@ body{
       font-size: 1.2em;
       border-bottom: 1px solid #000;
       margin: -20px -20px 15px -20px ;
-      background-color: #efefef;
       padding: 15px 20px 15px 20px;
+      @include linear-gradient(top, $gradient_from, $gradient_to, $fallback: $gradient_to);
     }
     &.post-excerpt{
       h4{
         border-bottom: 1px solid #000;
         margin: -20px -20px 15px -20px ;
-        background-color: #efefef;
+        @include linear-gradient(top, $gradient_from, $gradient_to, $fallback: $gradient_to);
         padding: 15px 20px 15px 20px;
         font-size: 1.3em;
-        color: #000;
+        color: #fff;
+        text-shadow: 1px 1px 1px #000;
         a{
           font-size: .8em;
           text-decoration: none;
-          color: #000;
+          color: #fff;
         }
       }
       h5{
@@ -190,10 +146,9 @@ body{
           display: inline-block;
           margin-top: 5px;
           a{
-            font-size: .8em;
-            border: 1px solid #000;
-            padding: 0.5em 1em 0.5em 1em;
-            background-color: #efefef;
+            @include button($tag-button-color);
+            text-decoration: none;
+            font-size: .7em;
           }
         }
       }
@@ -202,9 +157,25 @@ body{
   #post{
     &.brick{
       width: 578px;
-      .date{
-        font-weight: bold;
+      h2{
+        color: #FFF;
+        text-shadow: 1px 1px 1px #000;
+        .date{
+          vertical-align: middle;
+          display: inline-block;
+          width: 49%;
+          font-size: .8em;
+        }
+        .category{
+          vertical-align: middle;
+          display: inline-block;
+          width: 49%;
+          text-align: right;
+          font-weight: normal;
+          font-size: .8em;
+        }
       }
+      
       img{
         max-width: 100%;
       }
@@ -213,10 +184,9 @@ body{
           display: inline-block;
           margin-top: 5px;
           a{
-            font-size: .8em;
-            border: 1px solid #000;
-            padding: 0.5em 1em 0.5em 1em;
-            background-color: #efefef;
+            @include button($tag-button-color);
+            text-decoration: none;
+            font-size: .7em;
           }
         }
       }
@@ -245,12 +215,18 @@ body{
   h1{
     border-top: 1px solid #000;
     margin: 15px -20px -20px -20px ;
-    background-color: #efefef;
+    @include linear-gradient(top, #871719, #7D1517, $fallback: #7D1517);
     padding: 15px 20px 15px 20px;
+    color: #FFF;
+    text-shadow: 1px 1px 1px #000;
   }
 }
 
 #tag_cloud{
+  h2{
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+  }
   .cloud{
     text-align: center;
     font-weight: bold;
@@ -259,25 +235,57 @@ body{
     margin-right: 2px;
     margin-left: 2px;
     font-size: .8em;
+    text-decoration: none;
+    span{
+      @include button($tag-button-color);
+      display: inline-block;
+      margin-bottom: 3px;
+    }
   }
 }
 
 #categories{
+  h2{
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+  }
   .posts{
     li{
-      margin-bottom: 5px;
+      margin-bottom: 3px;
+      @include button($category-button-color);
+      float: left;
+      margin-right: 3px;
+      a{
+       color: #eee;
+       text-decoration: none;
+      }
     }
   }
 }
 
 #archives{
+  h2{
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+  }
   h3{
-    margin-top: 10px;
+    padding-top: 7px;
     margin-bottom: 10px;
+    clear: both;
+    &:first-child{
+      padding-top: 0px;
+    }
   }
   .posts{
     li{
-      margin-bottom: 5px;
+      margin-bottom: 3px;
+      @include button($archive-button-color);
+      float: left;
+      margin-right: 3px;
+      a{
+       color: #eee;
+       text-decoration: none;
+      }
     }
   }
 }

@@ -3,12 +3,14 @@ layout: default
 show_related: true
 ---
 <div id="post" class="brick">
+  <h2>
   <div class="date">{{ page.date | date:"%B %-d, %Y" }}</div>
   <div class="category">
-    {% if post.category %}
-      Posted in {{ post.category }}
+    {% if page.category %}
+      Posted in {{ page.category }}
     {% endif %}
   </div>
+  </h2>
   <div class="content">
     {{ content | replace: '/media/photos/', '/media/processed/photos/medium/' }}
   </div>
