@@ -152,10 +152,22 @@ body{
         margin: -20px -20px 15px -20px ;
         background-color: #efefef;
         padding: 15px 20px 15px 20px;
+        font-size: 1.3em;
+        color: #000;
+        a{
+          font-size: .8em;
+          text-decoration: none;
+          color: #000;
+        }
       }
       h5{
         margin-bottom: 10px;
         font-size: 1em;
+        a{
+          text-decoration: none;
+          color: #000;
+          text-shadow: none;
+        }
       }
       .content{
         font-size: .8em;
@@ -168,6 +180,10 @@ body{
       .category{
         float: right;
         font-size: .8em;
+      }
+      .readmore{
+        font-size: .7em;
+        margin: 10px 0;
       }
       .tags{
         li{
