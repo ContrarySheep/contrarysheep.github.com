@@ -7,6 +7,8 @@ tags:
   - Gems
 ---
 
+<script src="https://gist.github.com/2252262.js?file=rvm-coderunner.md"></script>
+
 Vestibulum interdum tristique diam. Vivamus hendrerit sapien gravida lacus iaculis scelerisque. In nisi felis, dictum in gravida sit amet, hendrerit bibendum nulla. Donec a neque eleifend purus accumsan fringilla vitae vitae nisl. Pellentesque porttitor lacus a massa pellentesque sodales. Aliquam congue pulvinar congue. In nec laoreet elit. Nullam imperdiet elementum eros nec sodales. Sed interdum lorem quis eros commodo a ultricies ligula varius.
 
     def hello_world
