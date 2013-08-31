@@ -16,36 +16,67 @@
 	  </a>
 	</div>
 
-	<div id="container" class={{ page.layout_class }}>
-	  
-	  <div id="header">
-  	  <div class="logo"><a href="/"><img src="/images/blaaag-small.png"></a></div>
-      <div class="navbar">
+  <div id="header">
+    <div class="logo"><a href="/"><img src="/images/blaaag-small.png" class="img-responsive"></a></div>
+    <div class="navbar">
+      <div class="navigation">
+
         <ul class="links">
-          <li>
+          <li class="about">
             <a href="/about">
               <img src="/images/sheep-badge-small.png" title="About" alt="About">
             </a>
           </li>
-          <li>
+          <li class="twitter">
             <a href="http://twitter.com/ContrarySheep">
               <img src="/images/twitter-badge-small.png" title="Twitter" alt="Twitter">
             </a>
           </li>
-          <li>
+          <li class="github">
             <a href="https://github.com/ContrarySheep">
               <img src="/images/octocat-badge-small.png" title="Github" alt="Github">
             </a>
           </li>
+          <li class="more">
+            <a href="/">
+              <img src="/images/more-icon-small.png" title="More" alt="More">
+            </a>
+          </li>
         </ul>
+
+        <ul class="site-links">
+          <li class="categories">
+            <a href="/categories">
+              Categories
+            </a>
+          </li>
+          <li class="archive">
+            <a href="/archives">
+              Archives
+            </a>
+          </li>
+          <li class="tags">
+            <a href="/tags">
+              Tags
+            </a>
+          </li>
+        </ul>
+
       </div>
-  	</div>
+    </div>
+  </div>
+
+	<div id="container" class={{ page.layout_class }}>
     
     {{ content }}
     
-    {% include footer.html %}
-    
 	</div>
+
+  <div id="footer">
+    <div id="copyright">
+      &copy;<script language="javascript">Today = new Date();document.write(Today.getFullYear());</script> ContrarySheep
+    </div>
+  </div>
 	
 </body>
 </html>
