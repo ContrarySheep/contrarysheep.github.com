@@ -5,7 +5,7 @@ hide_tags: true
 ---
 
 {% for tag in site.tags %}
-  <div class="brick">
+  <div>
      <a href="/tags/{{ tag[0] | downcase | replace:' ','-' }}">
        {{ tag[0] }}
      </a>

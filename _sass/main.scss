@@ -1,5 +1,6 @@
 @import 'normalize';
 @import 'bourbon/bourbon';
+@import 'neat/neat';
 @import 'solarized_dark';
 @import 'solarized_syntax';
 
@@ -9,6 +10,10 @@ $archive-button-color: #999;
 
 $gradient_from: #595959;
 $gradient_to: #404040;
+
+$dark-grey-color: #191919;
+$medium-grey-color: #b3b3b3;
+$light-grey-color: #e6e6e6;
 
 html{
   margin: 0;
@@ -45,7 +50,7 @@ body{
   }
   pre{
     code{
-      @include border-radius(5px);
+      @include border-top-radius(5px);
       padding: 1em;
       border: 1px solid #000;
     }
@@ -56,7 +61,7 @@ body{
       color: #666 !important;
     }
     .gist-file{
-      @include border-radius(10px);
+      @include border-top-radius(10px);
       border: 1px solid #000;
       .gist-data{
         @include border-top-radius(10px);
@@ -85,206 +90,25 @@ body{
 }
 
 #container{
-  display: none;
+  @include outer-container;
   margin: 0 auto;
-  .brick{
-    text-align: justify;
-    width: 263px;
-    float:left;
-    margin: 5px;
-    padding: 20px;
-    border: 1px solid #000;
-    h2{
-      font-size: 1.2em;
-      border-bottom: 1px solid #000;
-      margin: -20px -20px 15px -20px ;
-      padding: 15px 20px 15px 20px;
-      @include linear-gradient(top, $gradient_from, $gradient_to, $fallback: $gradient_to);
-    }
-    &.post-excerpt{
-      h4{
-        border-bottom: 1px solid #000;
-        margin: -20px -20px 15px -20px ;
-        @include linear-gradient(top, $gradient_from, $gradient_to, $fallback: $gradient_to);
-        padding: 15px 20px 15px 20px;
-        font-size: 1.3em;
-        color: #fff;
-        text-shadow: 1px 1px 1px #000;
-        a{
-          font-size: .8em;
-          text-decoration: none;
-          color: #fff;
-        }
-      }
-      h5{
-        margin-bottom: 10px;
-        font-size: 1em;
-        a{
-          text-decoration: none;
-          color: #000;
-          text-shadow: none;
-        }
-      }
-      .content{
-        font-size: .8em;
-      }
-      .date{
-        font-size: .8em;
-        font-weight: bold;
-        margin-bottom: 5px;
-      }
-      .category{
-        float: right;
-        font-size: .8em;
-      }
-      .readmore{
-        font-size: .7em;
-        margin: 10px 0;
-      }
-      .tags{
-        li{
-          display: inline-block;
-          margin-top: 5px;
-          a{
-            @include button($tag-button-color);
-            text-decoration: none;
-            font-size: .7em;
-          }
-        }
-      }
-    }
-  }
-  #post{
-    &.brick{
-      width: 578px;
-      h2{
-        color: #FFF;
-        text-shadow: 1px 1px 1px #000;
-        .date{
-          vertical-align: middle;
-          display: inline-block;
-          width: 49%;
-          font-size: .8em;
-        }
-        .category{
-          vertical-align: middle;
-          display: inline-block;
-          width: 49%;
-          text-align: right;
-          font-weight: normal;
-          font-size: .8em;
-        }
-      }
-      
-      img{
-        max-width: 100%;
-      }
-      .tags{
-        li{
-          display: inline-block;
-          margin-top: 5px;
-          a{
-            @include button($tag-button-color);
-            text-decoration: none;
-            font-size: .7em;
-          }
-        }
-      }
-    }
-  }
 }
 
 #header{
   .logo{
-    margin-bottom: -10px;
   }
-  .tagline{
-    font-size: .8em;
-    font-style: italic;
-    margin-bottom: 10px;
+  .navbar{
+    width: 100%;
+    background-color: $medium-grey-color;
+    border: 1px solid $dark-grey-color;
   }
   .links{
-    height: 50px;
     li{
       display: inline-block;
+      border-right: 1px solid $dark-grey-color;
+      padding: 10px;
       img{
-        width: 50px;
-      }
-    }
-  }
-  h1{
-    border-top: 1px solid #000;
-    margin: 15px -20px -20px -20px ;
-    @include linear-gradient(top, #871719, #7D1517, $fallback: #7D1517);
-    padding: 15px 20px 15px 20px;
-    color: #FFF;
-    text-shadow: 1px 1px 1px #000;
-  }
-}
-
-#tag_cloud{
-  h2{
-    color: #fff;
-    text-shadow: 1px 1px 1px #000;
-  }
-  .cloud{
-    text-align: center;
-    font-weight: bold;
-  }
-  a{
-    margin-right: 2px;
-    margin-left: 2px;
-    font-size: .8em;
-    text-decoration: none;
-    span{
-      @include button($tag-button-color);
-      display: inline-block;
-      margin-bottom: 3px;
-    }
-  }
-}
-
-#categories{
-  h2{
-    color: #fff;
-    text-shadow: 1px 1px 1px #000;
-  }
-  .posts{
-    li{
-      margin-bottom: 3px;
-      @include button($category-button-color);
-      float: left;
-      margin-right: 3px;
-      a{
-       color: #eee;
-       text-decoration: none;
-      }
-    }
-  }
-}
-
-#archives{
-  h2{
-    color: #fff;
-    text-shadow: 1px 1px 1px #000;
-  }
-  h3{
-    padding-top: 7px;
-    margin-bottom: 10px;
-    clear: both;
-    &:first-child{
-      padding-top: 0px;
-    }
-  }
-  .posts{
-    li{
-      margin-bottom: 3px;
-      @include button($archive-button-color);
-      float: left;
-      margin-right: 3px;
-      a{
-       color: #eee;
-       text-decoration: none;
+        width: 40px;
       }
     }
   }

@@ -5,7 +5,7 @@ hide_categories: true
 ---
 
 {% for category in site.categories %}
-  <div class="brick">
+  <div>
     <a href="/categories/{{ category[0] | downcase | replace:' ','-' }}">{{ category[0] }}</a> 
     ({{ category[1] | size }})
   </div>
