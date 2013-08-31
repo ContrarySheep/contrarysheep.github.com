@@ -15,7 +15,7 @@ end
 
 desc "Process the site with plugins enabled."
 task :process do
-  system "jekyll --no-safe"
+  system "jekyll build"
   puts "The site has been processed with plugins enabled."
 end
 
@@ -53,8 +53,8 @@ task :new do
 		f.puts ""
 	end
   
-  # Open in textmate.
-	system "mate #{path}"
+  # Open in sublime text.
+	system "subl #{path}"
 	
 	exit
 end
