@@ -1,0 +1,35 @@
+@import 'solarized_dark';
+@import 'solarized_syntax';
+
+pre{
+  code{
+    @include border-top-radius(5px);
+    padding: 1em;
+    border: 1px solid #000;
+  }
+}
+.gist{
+  margin-top: 20px;
+  a, a:link, a:visited{
+    color: #666 !important;
+  }
+  .gist-file{
+    @include border-top-radius(10px);
+    border: 1px solid #000;
+    .gist-data{
+      @include border-top-radius(10px);
+      .gist-highlight{
+        padding: 1em;
+        background: #000 !important;
+        color: #839496 !important;
+      }
+    }
+    .gist-meta{
+      @include border-bottom-radius(10px);
+      padding: 1em;
+    }
+  }
+}
+.gist-syntax{
+  @include solarized-syntax;
+}

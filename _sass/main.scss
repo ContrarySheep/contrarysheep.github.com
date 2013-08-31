@@ -1,8 +1,8 @@
 @import 'normalize';
 @import 'bourbon/bourbon';
+@import 'grid-settings';
 @import 'neat/neat';
-@import 'solarized_dark';
-@import 'solarized_syntax';
+@import 'code';
 
 $tag-button-color: #CACACA;
 $category-button-color: #6C6C6C;
@@ -13,7 +13,7 @@ $gradient_to: #404040;
 
 $dark-grey-color: #191919;
 $medium-grey-color: #b3b3b3;
-$light-grey-color: #e6e6e6;
+$light-grey-color: #e8e9e9;
 
 html{
   margin: 0;
@@ -21,68 +21,18 @@ html{
 }
 body{
   margin: 0 auto;
-  margin-top: 5px;
   height: 100%;
-  font-family: Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-weight: 300;
-  font-size: 16px;
-  letter-spacing: .03em;
-  a, a:link, a:visited{
-    color: #666;
-  }
-  h1,h2,h3,h4,h5,h6,ul,li{
-    margin:0;
-    padding:0;
-    text-align: left;
-  }
-  h1,h2,h3,h4,h5,h6{
-    color: #000;
-    text-shadow: 1px 1px 1px #999;
-  }
-  h1{
-    font-size: 1.3em;
-  }
-  li{
-    list-style-type: none;
-  }
   .clear{
     @include clearfix;
   }
-  pre{
-    code{
-      @include border-top-radius(5px);
-      padding: 1em;
-      border: 1px solid #000;
-    }
-  }
-  .gist{
-    margin-top: 20px;
-    a, a:link, a:visited{
-      color: #666 !important;
-    }
-    .gist-file{
-      @include border-top-radius(10px);
-      border: 1px solid #000;
-      .gist-data{
-        @include border-top-radius(10px);
-        .gist-highlight{
-          padding: 1em;
-          background: #000 !important;
-          color: #839496 !important;
-        }
-      }
-      .gist-meta{
-        @include border-bottom-radius(10px);
-        padding: 1em;
-      }
-    }
-  }
-  .gist-syntax{
-    @include solarized-syntax;
+  .img-responsive{
+    height: auto;
+    max-width: 100%;
   }
 }
 
 #forkme{
+  display: none;
   z-index: 99;
   position: absolute;
   top: 0; 
@@ -96,24 +46,59 @@ body{
 
 #header{
   .logo{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
   }
   .navbar{
     width: 100%;
-    background-color: $medium-grey-color;
-    border: 1px solid $dark-grey-color;
+    background-color: $light-grey-color;
+    border: 1px solid $medium-grey-color;
+  }
+  .navigation{
+    @include outer-container;
+    margin: 0 auto;
   }
   .links{
+    margin: 0;
+    padding: 0;
+    float: left;
     li{
+      margin: 0;
       display: inline-block;
-      border-right: 1px solid $dark-grey-color;
+      border-right: 1px solid $medium-grey-color;
       padding: 10px;
+      &.about{
+        border-left: 1px solid $medium-grey-color;
+      }
+      &.more{
+        display: none;
+        @include media($mobile) {
+          display: inline-block;
+        }
+      }
       img{
         width: 40px;
       }
     }
   }
+  .site-links{
+    margin: 0;
+    padding: 0;
+    float: right;
+    @include media($mobile) {
+      display: none;
+    }
+    li{
+      margin: 0;
+      display: inline-block;
+    }
+  }
 }
 
-#copyright{
-  font-size: .8em;
+#footer{
+  text-align: center;
+  #copyright{
+    font-size: .8em;
+  }
 }
