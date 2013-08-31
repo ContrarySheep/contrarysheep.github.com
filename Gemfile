@@ -7,4 +7,5 @@ group :development do
   gem 'bourbon'
   gem 'mini_magick'
   gem 'rdiscount'
+  gem 'rb-fsevent'
 end
