@@ -5,7 +5,7 @@ This project is in progress. The aim is to create a Jekyll site that is compatib
 # Local testing
 
     rvm 1.9.2@jekyll
-    jekyll --server --auto
+    jekyll serve --watch
     sass --watch _sass/main.scss:css/main.css -r ./_sass/bourbon/lib/bourbon.rb --style compressed
     rake
     
