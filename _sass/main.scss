@@ -46,14 +46,14 @@ body{
 
 #header{
   .logo{
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin: 20px 20px;
     text-align: center;
   }
   .navbar{
     width: 100%;
     background-color: $light-grey-color;
-    border: 1px solid $medium-grey-color;
+    border-top: 1px solid $medium-grey-color;
+    border-bottom: 1px solid $medium-grey-color;
   }
   .navigation{
     @include outer-container;
@@ -63,22 +63,28 @@ body{
     margin: 0;
     padding: 0;
     float: left;
+    @include media($mobile) {
+      width: 100%;
+      text-align: center;
+    }
     li{
       margin: 0;
       display: inline-block;
-      border-right: 1px solid $medium-grey-color;
       padding: 10px;
-      &.about{
-        border-left: 1px solid $medium-grey-color;
+      text-align: center;
+      @include media($mobile) {
+        border-right: 1px solid $medium-grey-color;
+        width: 24%;
       }
       &.more{
         display: none;
         @include media($mobile) {
           display: inline-block;
+          border-right: none;
         }
       }
       img{
-        width: 40px;
+        width: 50px;
       }
     }
   }
@@ -92,6 +98,14 @@ body{
     li{
       margin: 0;
       display: inline-block;
+      margin-right: 10px;
+      margin-top: 20px;
+      a{
+        font-size: 1.5em;
+        font-weight: bold;
+        color: black;
+        text-decoration: none;
+      }
     }
   }
 }
