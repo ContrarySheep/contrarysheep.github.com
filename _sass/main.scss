@@ -64,8 +64,11 @@ body{
 
 #header{
   .logo{
-    margin: 20px 20px;
+    margin: 40px 40px;
     text-align: center;
+    @include media($small_screen) {
+      margin: 20px 20px;
+    }
   }
   .navbar{
     width: 100%;
@@ -81,7 +84,7 @@ body{
     margin: 0 0 0 40px;
     padding: 0;
     float: left;
-    @include media($mobile) {
+    @include media($small_screen) {
       width: 100%;
       text-align: center;
       margin: 0;
@@ -90,14 +93,14 @@ body{
       padding: 5px 5px 5px 0;
       display: inline-block;
       text-align: center;
-      @include media($mobile) {
+      @include media($small_screen) {
         border-right: 1px solid $medium-grey-color;
         width: 24%;
         padding: 5px 0;
       }
       &.more{
         display: none;
-        @include media($mobile) {
+        @include media($small_screen) {
           display: inline-block;
           border-right: none;
         }
@@ -112,19 +115,65 @@ body{
     margin: 0 40px 0 0;
     padding: 0;
     float: right;
-    @include media($mobile) {
+    @include media($small_screen) {
       display: none;
     }
     li{
       margin: 0;
-      display: table-cell;
       height: 70px;
       vertical-align: middle;
       padding-left: 20px;
+      &.primary{
+        display: table-cell;
+      }
       a{
         font-size: 1.2em;
         color: black;
         text-decoration: none;
+      }
+      .dropdown{
+        position: relative;
+        &.archives{
+          margin-left: -10px;
+        }
+        &.categories{
+          margin-left: 0px;
+        }
+        &.tags{
+          margin-left: -25px;
+        }
+        .dropdown-menu{
+          position: absolute;
+          top: 100%;
+          left: 0;
+          z-index: 1000;
+          display: none;
+          float: left;
+          min-width: 100px;
+          padding: 5px 0;
+          margin: 2px 0 0;
+          list-style: none;
+          font-size: 14px;
+          background-color: #ffffff;
+          border: 1px solid #cccccc;
+          border: 1px solid rgba(0, 0, 0, 0.15);
+          border-radius: 4px;
+          -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+          background-clip: padding-box;
+          padding: 5px;
+          li{
+            @include roboto-condensed-light;
+            font-size: .9em;
+            height: 100%;
+            display: block;
+            margin: 5px;
+            padding: 0;
+            h3{
+              margin: 0;
+            }
+          }
+        }
       }
     }
   }

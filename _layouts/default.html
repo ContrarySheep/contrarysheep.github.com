@@ -6,6 +6,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="/css/main.css" type="text/css" />
    <script src="/js/jquery-1.7.1.min.js"></script>
+   <script src="/js/main.js"></script>
    {% include highlight.html %}
 </head>
 <body>
@@ -45,20 +46,88 @@
         </ul>
 
         <ul class="site-links">
-          <li class="categories">
-            <a href="/categories">
+          <li class="categories primary">
+            <a href="javascript:void(0)" onclick="toggleMenu('#category-dropdown')">
               Categories <span class="caret"></span>
             </a>
+            <div class="dropdown categories">
+              <ul class="dropdown-menu" id="category-dropdown">
+                {% for category in site.categories %}
+                  <li>
+                    <a href="/categories/{{ category[0] | downcase | replace:' ','-' }}">{{ category[0] }}</a> 
+                    ({{ category[1] | size }})
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
           </li>
-          <li class="archive">
-            <a href="/archives">
+          <li class="archive primary">
+            <a href="javascript:void(0)" onclick="toggleMenu('#archive-dropdown')">
               Archives <span class="caret"></span>
             </a>
+            <div class="dropdown archives">
+              <ul class="dropdown-menu" id="archive-dropdown">
+                {% assign counter = 1 %}
+                {% for post in site.posts %}
+                  {% unless post.next %}
+                    <li>
+                      <h3>{{ post.date | date: '%Y' }}</h3>
+                    </li>
+                  {% else %}
+                    {% capture year %}
+                      {{ post.date | date: '%Y' }}
+                    {% endcapture %}
+                    {% capture nyear %}
+                      {{ post.next.date | date: '%Y' }}
+                    {% endcapture %}
+                    {% if year != nyear %}
+                      <li>
+                        <h3>{{ post.date | date: '%Y' }}</h3>
+                      </li>
+                    {% endif %}
+                  {% endunless %}
+                  {% capture post_month %}
+                    {{ post.date | date: '%b' }}
+                  {% endcapture %}
+                  {% capture next_post_month %}
+                    {{ post.previous.date | date: '%b' }}
+                  {% endcapture %}
+                  {% if post_month != next_post_month %}
+                    <li>
+                      <a href="{{ post.date | date: '/%Y/%m/' }}">{{ post.date | date:"%B" }}</a> 
+                      ({{ counter }})
+                    </li>
+                    {% assign counter = 1 %}
+                  {% else %}
+                    {% capture temp %}
+                      {{ counter | plus: 1 }}
+                    {% endcapture %}
+                    {% assign counter = temp %}
+                  {% endif %}
+                {% endfor %}
+              </ul>
+            </div>
           </li>
-          <li class="tags">
-            <a href="/tags">
+          <li class="tags primary">
+            <a href="javascript:void(0)" onclick="toggleMenu('#tags-dropdown')">
               Tags <span class="caret"></span>
             </a>
+            <div class="dropdown tags">
+              <ul class="dropdown-menu" id="tags-dropdown">
+                {% for tag in site.tags %}
+                  {% assign title = tag[0] %}
+                  {% assign slug = tag[0] %}
+                  {% assign posts_for_tag = tag[1] %}
+                  {% for tagged_post in posts_for_tag  %}
+                    {% assign post_count = forloop.length %}
+                  {% endfor %}
+                    <li>
+                      <a href="/tags/{{ slug | downcase | replace:' ','-' }}">{{ title }}</a>
+                      ({{ post_count }})
+                    </li>
+                {% endfor %} 
+              </ul>
+            </div>
           </li>
         </ul>
 
