@@ -60,6 +60,9 @@ body{
   .inner{
     margin: 40px;
   }
+  h1,h2,h3,h4,h5,h6{
+    @include roboto-condensed;
+  }
 }
 
 #header{
@@ -184,4 +187,13 @@ body{
   #copyright{
     font-size: .8em;
   }
+}
+
+.post-excerpt, #post{
+  border: 1px solid $medium-grey-color;
+  margin-bottom: 40px;
+  padding: 15px;
+  -webkit-box-shadow: 4px 4px 18px rgba(0, 0, 0, 0.53);
+  -moz-box-shadow:    4px 4px 18px rgba(0, 0, 0, 0.53);
+  box-shadow:         4px 4px 18px rgba(0, 0, 0, 0.53);
 }
