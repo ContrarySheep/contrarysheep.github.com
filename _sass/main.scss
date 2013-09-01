@@ -47,7 +47,7 @@ body{
 }
 
 #forkme{
-  display: none;
+  display: block;
   z-index: 99;
   position: absolute;
   top: 0; 
@@ -184,6 +184,7 @@ body{
 
 #footer{
   text-align: center;
+  padding-bottom: 40px;
   #copyright{
     font-size: .8em;
   }
