@@ -47,17 +47,17 @@
         <ul class="site-links">
           <li class="categories">
             <a href="/categories">
-              Categories
+              Categories <span class="caret"></span>
             </a>
           </li>
           <li class="archive">
             <a href="/archives">
-              Archives
+              Archives <span class="caret"></span>
             </a>
           </li>
           <li class="tags">
             <a href="/tags">
-              Tags
+              Tags <span class="caret"></span>
             </a>
           </li>
         </ul>
@@ -67,8 +67,10 @@
   </div>
 
 	<div id="container" class={{ page.layout_class }}>
-    
-    {{ content }}
+
+    <div class="inner">
+      {{ content }}
+    </div>
     
 	</div>
 
