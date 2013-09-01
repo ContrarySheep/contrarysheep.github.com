@@ -1,0 +1,27 @@
+@import url(//fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400,300,700|Roboto+Slab:400,100,300,700);
+
+@mixin roboto-condensed{
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 400;
+}
+
+@mixin roboto-condensed-light{
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 300;
+}
+
+@mixin roboto-condensed-light-italic{
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+@mixin roboto-slab{
+  font-family: 'Roboto Slab', serif;
+  font-weight: 400;
+}
+
+@mixin roboto-slab-light{
+  font-family: 'Roboto Slab', serif;
+  font-weight: 100;
+}
