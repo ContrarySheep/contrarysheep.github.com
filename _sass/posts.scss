@@ -1,0 +1,27 @@
+@import 'typography';
+
+.inner{
+}
+
+.post-excerpt, #post{
+  border: 1px solid $medium-grey-color;
+  margin-bottom: 40px;
+  padding: 15px;
+  -webkit-box-shadow: 4px 4px 18px rgba(0, 0, 0, 0.53);
+  -moz-box-shadow:    4px 4px 18px rgba(0, 0, 0, 0.53);
+  box-shadow:         4px 4px 18px rgba(0, 0, 0, 0.53);
+}
+
+.post-excerpt{
+  width: 32%;
+  display: inline-block;
+  margin-left: 2%;
+  margin-bottom: 2%;
+  float: left;
+  &:first-child{
+    margin-left: 0;
+  }
+  @include media($small_screen) {
+    width: 100%;
+  }
+}

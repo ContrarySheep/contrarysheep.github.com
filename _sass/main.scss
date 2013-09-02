@@ -5,17 +5,7 @@
 @import 'code';
 @import 'glyphicons';
 @import 'typography';
-
-$tag-button-color: #CACACA;
-$category-button-color: #6C6C6C;
-$archive-button-color: #999;
-
-$gradient_from: #595959;
-$gradient_to: #404040;
-
-$dark-grey-color: #191919;
-$medium-grey-color: #b3b3b3;
-$light-grey-color: #e8e9e9;
+@import 'posts';
 
 html{
   margin: 0;
@@ -190,11 +180,4 @@ body{
   }
 }
 
-.post-excerpt, #post{
-  border: 1px solid $medium-grey-color;
-  margin-bottom: 40px;
-  padding: 15px;
-  -webkit-box-shadow: 4px 4px 18px rgba(0, 0, 0, 0.53);
-  -moz-box-shadow:    4px 4px 18px rgba(0, 0, 0, 0.53);
-  box-shadow:         4px 4px 18px rgba(0, 0, 0, 0.53);
-}
+
