@@ -41,7 +41,7 @@
     </div>
     <div class="date">{{ post.date | date:"%B %-d, %Y" }}</div>
     <div class="content raw">
-      {{ post.content | truncatewords:40 | markdownify }}
+      {{ post.content | truncatewords:5 | markdownify }}
     </div>
     <div class="readmore">
       <a href="{{ post.url }}">Read More</a>

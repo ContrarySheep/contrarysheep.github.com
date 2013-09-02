@@ -14,7 +14,9 @@ html{
 body{
   margin: 0 auto;
   height: 100%;
+  min-width: 315px;
   @include roboto-slab;
+  color: $dark-grey-color;
   .clear{
     @include clearfix;
   }
@@ -45,11 +47,8 @@ body{
 }
 
 #container{
-  @include outer-container;
+  width: 90%;
   margin: 0 auto;
-  .inner{
-    margin: 40px;
-  }
   h1,h2,h3,h4,h5,h6{
     @include roboto-condensed;
   }
@@ -71,10 +70,13 @@ body{
   }
   .navigation{
     @include outer-container;
+    width: 90%;
+    @include media($small_screen) {
+      width: 100%;
+    }
     margin: 0 auto;
   }
   .links{
-    margin: 0 0 0 40px;
     padding: 0;
     float: left;
     @include media($small_screen) {
@@ -105,7 +107,7 @@ body{
   }
   .site-links{
     @include roboto-condensed;
-    margin: 0 40px 0 0;
+    @include row($direction: RTL);
     padding: 0;
     float: right;
     @include media($small_screen) {
@@ -179,5 +181,4 @@ body{
     font-size: .8em;
   }
 }
-
 

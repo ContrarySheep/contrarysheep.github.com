@@ -4,9 +4,13 @@ title: 'All Categories'
 hide_categories: true
 ---
 
+<div id="post">
+
 {% for category in site.categories %}
   <div>
     <a href="/categories/{{ category[0] | downcase | replace:' ','-' }}">{{ category[0] }}</a> 
     ({{ category[1] | size }})
   </div>
 {% endfor %}
+
+</div>

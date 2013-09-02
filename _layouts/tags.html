@@ -4,6 +4,8 @@ title: 'All Tags'
 hide_tags: true
 ---
 
+<div id="post">
+
 {% for tag in site.tags %}
   <div>
      <a href="/tags/{{ tag[0] | downcase | replace:' ','-' }}">
@@ -12,3 +14,5 @@ hide_tags: true
     {% for tagged_post in tag[1]  %}{% assign post_count = forloop.length %}{% endfor %}({{ post_count }})
   </div>
 {% endfor %}
+
+</div>
