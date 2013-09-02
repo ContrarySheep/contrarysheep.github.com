@@ -9,4 +9,8 @@ group :development do
   gem 'mini_magick'
   gem 'rdiscount'
   gem 'rb-fsevent'
+  gem 'guard'
+  gem 'guard-jekyll-plus'
+  gem 'guard-sass'
+  gem 'guard-livereload'
 end
