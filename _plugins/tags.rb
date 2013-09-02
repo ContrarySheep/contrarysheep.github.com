@@ -12,7 +12,7 @@ module Jekyll
     end
   end
   
-  class Tags < CustomPage
+  class AllTags < CustomPage
     def initialize(site, base, dir)
       super site, base, dir, 'tags'
       self.data['tags'] = site.tags.keys.sort
@@ -25,7 +25,7 @@ module Jekyll
       throw "No 'tag' layout found." unless self.layouts.key? 'tag'
       
       dir = self.config['tag_dir'] || 'tags'
-      write_page Tags.new(self, self.source, dir) if self.layouts.key? 'tags'
+      write_page AllTags.new(self, self.source, dir) if self.layouts.key? 'tags'
       
       self.tags.keys.each do |tag|
         write_page Tag.new(self, self.source, File.join(dir, tag.slugize), tag)
