@@ -6,6 +6,10 @@ This project is in progress. The aim is to create a Jekyll site that is compatib
 
     rvm 1.9.2@jekyll
     jekyll serve --watch
-    sass --watch _sass/main.scss:css/main.css -r ./_sass/bourbon/lib/bourbon.rb --style compressed
+    sass --watch _sass/main.scss:css/main.css --style compressed
     rake
     
+## Publishing
+
+  Github pages does not allow the use of plugins, as such the `jekyll build` command is run with the `--safe` option. This will generate much of the site, but the pages for the tags and categories, must be generated locally and uploaded seperatly.
+
