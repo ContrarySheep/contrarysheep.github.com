@@ -11,13 +11,13 @@
   margin-bottom: em(25);
 }
 
-.post-excerpt, #post{
-  border: 1px solid $medium-grey-color;
+.post-excerpt, #post, #page{
+  border: 1px solid #e6e6e6;
   margin-bottom: 40px;
   padding: 20px;
-  -webkit-box-shadow: 4px 4px 18px rgba(0, 0, 0, 0.53);
-  -moz-box-shadow:    4px 4px 18px rgba(0, 0, 0, 0.53);
-  box-shadow:         4px 4px 18px rgba(0, 0, 0, 0.53);
+  -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow:    4px 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow:         4px 4px 10px rgba(0, 0, 0, 0.2);
   a{
     color: $dark-grey-color;
   }
