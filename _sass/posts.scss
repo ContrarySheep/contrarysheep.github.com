@@ -38,6 +38,38 @@
 
 #post{
   @include span-columns(12);
+  .title{
+    margin-bottom: 0;
+  }
+  .category{
+    font-size: .8em;
+    margin-bottom: 10px;
+  }
+  .content{
+    margin-bottom: 30px;
+  }
+  .tags{
+    margin: 0;
+    padding: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    li{
+      list-style-type: none;
+      display: inline-block;
+      font-size: .8em;
+      a{
+        background-color: $light-grey-color;
+        border: 1px solid $medium-grey-color;
+        text-decoration: none;
+        @include roboto-condensed;
+        padding: .3em 1em .4em 1em;
+      }
+    }
+  }
+  h2{
+    padding-bottom: 3px;
+    border-bottom: 1px solid $medium-grey-color;
+  }
 }
 
 .post-grid{
@@ -62,16 +94,57 @@
     @include omega(1n);
   }
   margin-bottom: em(25);
-  .category, .date{
+  .excerpt-content{
+    height: 305px;
+    overflow: hidden;
+  }
+  .related{
+    font-size: .7em;
+    margin-bottom: 5px;
+  }
+  .title{
+    margin-bottom: 3px;
+    a{
+      text-decoration: none;
+      @include roboto-condensed;
+      font-size: 1.5em;
+      line-height: 1.1em;
+    }
+  }
+  .category{
+    font-size: .8em;
+  }
+  .date{
+    font-size: .7em;
+    display: none;
+  }
+  .content{
+    height: 210px;
+    overflow: hidden;
+  }
+  .readmore{
     font-size: .8em;
   }
   .tags{
     margin: 0;
     padding: 0;
+    margin-top: 10px;
     li{
       list-style-type: none;
       display: inline-block;
       font-size: .8em;
+      a{
+        background-color: $light-grey-color;
+      border: 1px solid $medium-grey-color;
+        text-decoration: none;
+        @include roboto-condensed;
+        padding: .3em 1em .4em 1em;
+      }
     }
+  }
+  img{
+    max-height: 180px;
+    display: block;
+    margin: 0 auto;
   }
 }
