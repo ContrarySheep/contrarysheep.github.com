@@ -42,6 +42,32 @@
             <a href="/">
               <img src="/images/more-icon-small.png" title="More" alt="More">
             </a>
+            <div class="nav_select">
+              <select class="more_phone_select_menu">
+                <option></option>
+                <optgroup label="Categories">
+                  {% for category in site.categories %}
+                    <option value="/{{ category[0] | downcase | replace:' ','-' }}">
+                      {{ category[0] }} ({{ category[1] | size }})
+                    </option>
+                  {% endfor %}
+                </optgroup>
+                <optgroup label="Tags">
+                  {% for tag in site.tags %}
+                    {% assign title = tag[0] %}
+                    {% assign slug = tag[0] %}
+                    {% assign posts_for_tag = tag[1] %}
+                    {% for tagged_post in posts_for_tag  %}
+                      {% assign post_count = forloop.length %}
+                    {% endfor %}
+                      <option value="/tags/{{ slug | downcase | replace:' ','-' }}">
+                        {{ title }} ({{ post_count }})
+                      </option>
+                  {% endfor %} 
+                </optgroup>
+              </select>
+            </div>
+
           </li>
         </ul>
 
